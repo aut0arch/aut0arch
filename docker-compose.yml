@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - shared-data:/aut0arch/app/public # Explainer writes to this directory
+    environment:
+      - FLASK_ENV=development
+    networks:
+      - aut0arch-net
+
+  frontend:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - shared-data:/app/public # Frontend reads generated architecture from here
+    environment:
+      - NODE_ENV=development
+    networks:
+      - aut0arch-net
+    depends_on:
+      - backend
+
+volumes:
+  shared-data:
+    description: "Volume for sharing the output clustering_data.json from Backend -> Frontend"
+
+networks:
+  aut0arch-net:
+    driver: bridge

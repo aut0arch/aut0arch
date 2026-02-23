@@ -1,0 +1,34 @@
+FROM python:3.10-slim
+
+# Install system dependencies
+# git is required to clone target repositories
+# build-essential is required to compile tree-sitter C bindings
+RUN apt-get update && apt-get install -y \
+    git \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set up a working directory
+WORKDIR /aut0arch
+
+# Copy entire project directory (all sub-repos)
+# This includes server, explainer, clustering, parser, etc.
+COPY . .
+
+# Install dependencies for all backend services
+RUN pip install --no-cache-dir -r server/requirements.txt
+RUN pip install --no-cache-dir -r parser/requirements.txt
+RUN pip install --no-cache-dir -r clustering/requirements.txt
+RUN pip install --no-cache-dir -r explainer/requirements.txt
+
+# Create temp_repos directory for orchestrator cloning
+RUN mkdir -p temp_repos
+
+# Ensure the public app directory exists for writing the output
+RUN mkdir -p app/public
+
+# Expose backend port
+EXPOSE 5000
+
+# Start server
+CMD ["python", "server/app.py"]
