@@ -11,6 +11,7 @@ services:
       - shared-data:/aut0arch/app/public # Explainer writes to this directory
     environment:
       - FLASK_ENV=development
+      - OLLAMA_HOST=http://host.containers.internal:11434
     networks:
       - aut0arch-net
 
