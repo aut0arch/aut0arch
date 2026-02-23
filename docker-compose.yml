@@ -31,7 +31,7 @@ services:
 
 volumes:
   shared-data:
-    description: "Volume for sharing the output clustering_data.json from Backend -> Frontend"
+
 
 networks:
   aut0arch-net:
