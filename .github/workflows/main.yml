@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Compose
+        run: docker compose version
+
+      - name: Build and Run Tests
+        run: |
+          docker compose up --build --abort-on-container-exit --exit-code-from app
+
+      - name: Shutdown
+        if: always()
+        run: docker compose down -v
