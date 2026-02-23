@@ -18,7 +18,7 @@ jobs:
 
       - name: Build and Run Tests
         run: |
-          docker compose up --build --abort-on-container-exit --exit-code-from app
+          docker compose up --build --abort-on-container-exit --exit-code-from frontend
 
       - name: Shutdown
         if: always()
