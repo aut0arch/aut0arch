@@ -1,0 +1,9 @@
+.git
+.gitmodules
+.gitignore
+temp_repos
+**/.git
+**/.venv
+**/__pycache__
+app/node_modules
+app/dist

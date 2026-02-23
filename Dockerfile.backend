@@ -11,15 +11,21 @@ RUN apt-get update && apt-get install -y \
 # Set up a working directory
 WORKDIR /aut0arch
 
-# Copy entire project directory (all sub-repos)
-# This includes server, explainer, clustering, parser, etc.
-COPY . .
+# Copy dependency manifests first to leverage Docker layer caching
+COPY server/requirements.txt server/
+COPY parser/requirements.txt parser/
+COPY clustering/requirements.txt clustering/
+COPY explainer/requirements.txt explainer/
 
 # Install dependencies for all backend services
 RUN pip install --no-cache-dir -r server/requirements.txt
 RUN pip install --no-cache-dir -r parser/requirements.txt
 RUN pip install --no-cache-dir -r clustering/requirements.txt
 RUN pip install --no-cache-dir -r explainer/requirements.txt
+
+# Copy entire project directory (all sub-repos)
+# This includes server, explainer, clustering, parser, etc.
+COPY . .
 
 # Create temp_repos directory for orchestrator cloning
 RUN mkdir -p temp_repos
