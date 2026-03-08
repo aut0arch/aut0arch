@@ -21,8 +21,8 @@ Here is a breakdown of the 5 repositories/components in the system and how they 
 **Role:** Adds semantic meaning to the abstracted architecture. It reads the `clustered_structure.json` and the corresponding source code for each cluster, then prompts the `gemini-flash-latest` model to generate a high-level description for each component. The LLM identifies the role, likely inputs/outputs, technical details, and key patterns. The final enriched data is saved as `clustering_data.json` for the frontend to consume.
 
 ## 5. `app` (The Frontend Visualizer)
-**Tech Stack:** React, Vite, Cytoscape.js
-**Role:** The web-based user interface for the system. It uses `react-cytoscapejs` and `cytoscape-dagre` to visually render the architectural nodes and their flow/dependencies. Users can interact with the graph to view the LLM-generated explanations, technical details, and code evidence for each recovered component.
+**Tech Stack:** Next.js, React Flow, Tailwind CSS
+**Role:** The web-based user interface for the system. It uses `@xyflow/react` and `dagre` to visually render the architectural nodes and their flow/dependencies. Users can interact with the graph to view the LLM-generated explanations, technical details, and code evidence for each recovered component.
 
 ---
 ### Data Flow Pipeline

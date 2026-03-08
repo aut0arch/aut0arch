@@ -3,7 +3,7 @@
 Aut0arch is an autonomous architecture analysis and visualization application. It extracts software structures from source code repositories and utilizes LLMs to generate explanations of the resulting microservices/clusters.
 
 The project is split into 6 core modules:
-- `app`: The React/Vite Frontend visualization layer.
+- `app`: The Next.js/React Frontend visualization layer.
 - `server`: The Flask back-end orchestrator.
 - `parser`: A Tree-Sitter component that creates a graph representation of the source code.
 - `clustering`: Applies the Louvain algorithm to map classes/files into domains.
