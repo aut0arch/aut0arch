@@ -3,7 +3,7 @@
 Aut0arch is an autonomous architecture analysis and visualization application. It extracts software structures from source code repositories and utilizes LLMs to generate explanations of the resulting microservices/clusters.
 
 The project is split into 6 core modules:
-- `app`: The React/Vite Frontend visualization layer.
+- `app`: The Next.js/React Frontend visualization layer.
 - `server`: The Flask back-end orchestrator.
 - `parser`: A Tree-Sitter component that creates a graph representation of the source code.
 - `clustering`: Applies the Louvain algorithm to map classes/files into domains.
@@ -26,8 +26,8 @@ To run the entire suite locally across all repositories without configuring a de
 docker-compose up --build -d
 ```
 
-Both the `frontend` (port 5173) and `backend` (port 5000) services will bind to your localhost.
-Navigate to [http://localhost:5173](http://localhost:5173) to view the application.
+Both the `frontend` (port 3000) and `backend` (port 5000) services will bind to your localhost.
+Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
 *To stop the cluster:*
 ```bash
