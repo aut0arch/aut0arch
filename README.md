@@ -26,8 +26,8 @@ To run the entire suite locally across all repositories without configuring a de
 docker-compose up --build -d
 ```
 
-Both the `frontend` (port 5173) and `backend` (port 5000) services will bind to your localhost.
-Navigate to [http://localhost:5173](http://localhost:5173) to view the application.
+Both the `frontend` (port 3000) and `backend` (port 5000) services will bind to your localhost.
+Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
 *To stop the cluster:*
 ```bash

@@ -20,11 +20,12 @@ services:
       context: ./app
       dockerfile: Dockerfile
     ports:
-      - "5173:5173"
+      - "3000:3000"
     volumes:
       - shared-data:/app/public # Frontend reads generated architecture from here
     environment:
       - NODE_ENV=development
+      - WATCHPACK_POLLING=true
     networks:
       - aut0arch-net
     depends_on:
