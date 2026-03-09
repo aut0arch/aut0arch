@@ -1,18 +1,18 @@
 [submodule "app"]
 	path = app
-	url = https://github.com/aut0arch/app.git
+	url = git@github.com:aut0arch/app.git
 [submodule "clustering"]
 	path = clustering
-	url = https://github.com/aut0arch/clustering
+	url = git@github.com:aut0arch/clustering
 [submodule "explainer"]
 	path = explainer
-	url = https://github.com/aut0arch/explainer
+	url = git@github.com:aut0arch/explainer
 [submodule "docs"]
 	path = docs
-	url = https://github.com/aut0arch/docs
+	url = git@github.com:aut0arch/docs
 [submodule "parser"]
 	path = parser
-	url = https://github.com/aut0arch/parser
+	url = git@github.com:aut0arch/parser
 [submodule "server"]
 	path = server
-	url = https://github.com/aut0arch/server
+	url = git@github.com:aut0arch/server

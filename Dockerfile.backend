@@ -15,13 +15,14 @@ WORKDIR /aut0arch
 COPY server/requirements.txt server/
 COPY parser/requirements.txt parser/
 COPY clustering/requirements.txt clustering/
-COPY explainer/requirements.txt explainer/
 
 # Install dependencies for all backend services
 RUN pip install --no-cache-dir -r server/requirements.txt
 RUN pip install --no-cache-dir -r parser/requirements.txt
 RUN pip install --no-cache-dir -r clustering/requirements.txt
-RUN pip install --no-cache-dir -r explainer/requirements.txt
+
+# Install specific explainer dependencies since its requirements.txt was removed
+RUN pip install --no-cache-dir google-generativeai python-dotenv
 
 # Copy entire project directory (all sub-repos)
 # This includes server, explainer, clustering, parser, etc.
