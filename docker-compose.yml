@@ -5,15 +5,26 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.backend
-    ports:
-      - "5000:5000"
+    network_mode: "host"
     volumes:
       - shared-data:/aut0arch/app/public # Explainer writes to this directory
     environment:
       - FLASK_ENV=development
-      - OLLAMA_HOST=http://host.containers.internal:11434
-    networks:
-      - aut0arch-net
+      - OLLAMA_HOST=http://localhost:11434
+    develop:
+      watch:
+        - action: sync
+          path: ./server
+          target: /aut0arch/server
+        - action: sync
+          path: ./explainer
+          target: /aut0arch/explainer
+        - action: sync
+          path: ./clustering
+          target: /aut0arch/clustering
+        - action: sync
+          path: ./parser
+          target: /aut0arch/parser
 
   frontend:
     build:
