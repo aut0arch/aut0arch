@@ -1,0 +1,42 @@
+{
+    "model_comparison": [
+        {
+            "model": "openrouter-openai/gpt-oss-20b:free",
+            "workers": 4,
+            "time_s": 109.09500098228455,
+            "status": "success"
+        },
+        {
+            "model": "openrouter-stepfun/step-3.5-flash:free",
+            "workers": 4,
+            "time_s": 33.18447017669678,
+            "status": "success"
+        }
+    ],
+    "worker_comparison": [
+        {
+            "model": "openrouter-stepfun/step-3.5-flash:free",
+            "workers": 1,
+            "time_s": 113.20666599273682,
+            "status": "success"
+        },
+        {
+            "model": "openrouter-stepfun/step-3.5-flash:free",
+            "workers": 2,
+            "time_s": 61.108134746551514,
+            "status": "success"
+        },
+        {
+            "model": "openrouter-stepfun/step-3.5-flash:free",
+            "workers": 4,
+            "time_s": 32.120704889297485,
+            "status": "success"
+        },
+        {
+            "model": "openrouter-stepfun/step-3.5-flash:free",
+            "workers": 8,
+            "time_s": 21.543581247329712,
+            "status": "success"
+        }
+    ]
+}
