@@ -1,0 +1,44 @@
+[
+    {
+        "repository": "board-java",
+        "url": "https://github.com/JacMattisen/board-java.git",
+        "loc": 1168,
+        "files": 27,
+        "nodes": 95,
+        "edges": 207,
+        "clusters": 15,
+        "clone_time_s": 1.714097499847412,
+        "parser_time_s": 0.18517613410949707,
+        "clustering_time_s": 0.1910724639892578,
+        "status": "success",
+        "error_stage": null
+    },
+    {
+        "repository": "Java-Project",
+        "url": "https://github.com/SaurabhDalavi16/Java-Project.git",
+        "loc": 1455,
+        "files": 8,
+        "nodes": 97,
+        "edges": 204,
+        "clusters": 3,
+        "clone_time_s": 1.355400800704956,
+        "parser_time_s": 0.12284564971923828,
+        "clustering_time_s": 0.18424701690673828,
+        "status": "success",
+        "error_stage": null
+    },
+    {
+        "repository": "Java",
+        "url": "https://github.com/TheAlgorithms/Java.git",
+        "loc": 134034,
+        "files": 1548,
+        "nodes": 10760,
+        "edges": 145643,
+        "clusters": 180,
+        "clone_time_s": 1.8530030250549316,
+        "parser_time_s": 78.30934405326843,
+        "clustering_time_s": 0.7471022605895996,
+        "status": "success",
+        "error_stage": null
+    }
+]
