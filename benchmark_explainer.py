@@ -16,13 +16,14 @@ TARGET_DIR = os.path.join(BACKEND_DIR, "temp_repos", "board-java-benchmark")
 
 # Models to benchmark with varied workers
 OPENROUTER_MODELS = [
-    "openrouter-openai/gpt-oss-20b:free",
-    "openrouter-stepfun/step-3.5-flash:free"
+    "openrouter-google/gemma-4-26b-a4b-it:free",
+    "openrouter-tencent/hy3-preview:free",
+    "openrouter-minimax/minimax-m2.5:free"
 ]
 
 # Worker counts to test for the concurrency benchmark
 WORKER_COUNTS = [1, 2, 4, 8]
-CONCURRENCY_MODEL = "openrouter-stepfun/step-3.5-flash:free"
+CONCURRENCY_MODEL = "openrouter-google/gemma-4-26b-a4b-it:free"
 
 def run_command(command, cwd=None):
     try:

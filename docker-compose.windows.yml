@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  backend:
+    image: localhost/aut0arch-backend:latest
+    network_mode: "host"
+    volumes:
+      - shared-data:/aut0arch/app/public
+    environment:
+      - FLASK_ENV=development
+      - OLLAMA_HOST=http://localhost:11434
+
+  frontend:
+    image: localhost/aut0arch-frontend:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - shared-data:/app/public
+    environment:
+      - NODE_ENV=development
+    networks:
+      - aut0arch-net
+    depends_on:
+      - backend
+
+volumes:
+  shared-data:
+
+networks:
+  aut0arch-net:
+    driver: bridge
