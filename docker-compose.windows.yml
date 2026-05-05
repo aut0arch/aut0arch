@@ -3,12 +3,17 @@ version: '3.8'
 services:
   backend:
     image: localhost/aut0arch-backend:latest
-    network_mode: "host"
+    ports:
+      - "5000:5000"
     volumes:
       - shared-data:/aut0arch/app/public
     environment:
       - FLASK_ENV=development
-      - OLLAMA_HOST=http://localhost:11434
+      - OLLAMA_HOST=http://host.docker.internal:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - aut0arch-net
 
   frontend:
     image: localhost/aut0arch-frontend:latest
